@@ -1,12 +1,12 @@
 package desoapi
 
 import (
-	"github.com/deso-smart/deso-backend/v2/routes"
+	desoRoutes "github.com/deso-smart/deso-backend/v2/routes"
 	"github.com/valyala/fasthttp"
 )
 
-func (c *Client) AppendExtraData(payload *routes.AppendExtraDataRequest) (*routes.AppendExtraDataResponse, error) {
-	data := new(routes.AppendExtraDataResponse)
+func (c *Client) AppendExtraData(payload *desoRoutes.AppendExtraDataRequest) (*desoRoutes.AppendExtraDataResponse, error) {
+	data := new(desoRoutes.AppendExtraDataResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/append-extra-data", payload, data)
 	if err != nil {
@@ -16,8 +16,8 @@ func (c *Client) AppendExtraData(payload *routes.AppendExtraDataRequest) (*route
 	return data, nil
 }
 
-func (c *Client) AuthorizeDerivedKey(payload *routes.AuthorizeDerivedKeyRequest) (*routes.AuthorizeDerivedKeyResponse, error) {
-	data := new(routes.AuthorizeDerivedKeyResponse)
+func (c *Client) AuthorizeDerivedKey(payload *desoRoutes.AuthorizeDerivedKeyRequest) (*desoRoutes.AuthorizeDerivedKeyResponse, error) {
+	data := new(desoRoutes.AuthorizeDerivedKeyResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/authorize-derived-key", payload, data)
 	if err != nil {
@@ -27,8 +27,8 @@ func (c *Client) AuthorizeDerivedKey(payload *routes.AuthorizeDerivedKeyRequest)
 	return data, nil
 }
 
-func (c *Client) BuyOrSellCreatorCoin(payload *routes.BuyOrSellCreatorCoinRequest) (*routes.BuyOrSellCreatorCoinResponse, error) {
-	data := new(routes.BuyOrSellCreatorCoinResponse)
+func (c *Client) BuyOrSellCreatorCoin(payload *desoRoutes.BuyOrSellCreatorCoinRequest) (*desoRoutes.BuyOrSellCreatorCoinResponse, error) {
+	data := new(desoRoutes.BuyOrSellCreatorCoinResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/buy-or-sell-creator-coin", payload, data)
 	if err != nil {
@@ -38,8 +38,8 @@ func (c *Client) BuyOrSellCreatorCoin(payload *routes.BuyOrSellCreatorCoinReques
 	return data, nil
 }
 
-func (c *Client) CreateFollowTxnStateless(payload *routes.CreateFollowTxnStatelessRequest) (*routes.CreateFollowTxnStatelessResponse, error) {
-	data := new(routes.CreateFollowTxnStatelessResponse)
+func (c *Client) CreateFollowTxnStateless(payload *desoRoutes.CreateFollowTxnStatelessRequest) (*desoRoutes.CreateFollowTxnStatelessResponse, error) {
+	data := new(desoRoutes.CreateFollowTxnStatelessResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/create-follow-txn-stateless", payload, data)
 	if err != nil {
@@ -49,8 +49,8 @@ func (c *Client) CreateFollowTxnStateless(payload *routes.CreateFollowTxnStatele
 	return data, nil
 }
 
-func (c *Client) CreateLikeStateless(payload *routes.CreateLikeStatelessRequest) (*routes.CreateLikeStatelessResponse, error) {
-	data := new(routes.CreateLikeStatelessResponse)
+func (c *Client) CreateLikeStateless(payload *desoRoutes.CreateLikeStatelessRequest) (*desoRoutes.CreateLikeStatelessResponse, error) {
+	data := new(desoRoutes.CreateLikeStatelessResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/create-like-stateless", payload, data)
 	if err != nil {
@@ -60,8 +60,8 @@ func (c *Client) CreateLikeStateless(payload *routes.CreateLikeStatelessRequest)
 	return data, nil
 }
 
-func (c *Client) DAOCoin(payload *routes.DAOCoinRequest) (*routes.DAOCoinResponse, error) {
-	data := new(routes.DAOCoinResponse)
+func (c *Client) DAOCoin(payload *desoRoutes.DAOCoinRequest) (*desoRoutes.DAOCoinResponse, error) {
+	data := new(desoRoutes.DAOCoinResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/dao-coin", payload, data)
 	if err != nil {
@@ -71,8 +71,8 @@ func (c *Client) DAOCoin(payload *routes.DAOCoinRequest) (*routes.DAOCoinRespons
 	return data, nil
 }
 
-func (c *Client) ExchangeBitcoin(payload *routes.ExchangeBitcoinRequest) (*routes.ExchangeBitcoinResponse, error) {
-	data := new(routes.ExchangeBitcoinResponse)
+func (c *Client) ExchangeBitcoin(payload *desoRoutes.ExchangeBitcoinRequest) (*desoRoutes.ExchangeBitcoinResponse, error) {
+	data := new(desoRoutes.ExchangeBitcoinResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/exchange-bitcoin", payload, data)
 	if err != nil {
@@ -82,8 +82,8 @@ func (c *Client) ExchangeBitcoin(payload *routes.ExchangeBitcoinRequest) (*route
 	return data, nil
 }
 
-func (c *Client) GetTransactionSpending(payload *routes.GetTransactionSpendingRequest) (*routes.GetTransactionSpendingResponse, error) {
-	data := new(routes.GetTransactionSpendingResponse)
+func (c *Client) GetTransactionSpending(payload *desoRoutes.GetTransactionSpendingRequest) (*desoRoutes.GetTransactionSpendingResponse, error) {
+	data := new(desoRoutes.GetTransactionSpendingResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-transaction-spending", payload, data)
 	if err != nil {
@@ -93,8 +93,8 @@ func (c *Client) GetTransactionSpending(payload *routes.GetTransactionSpendingRe
 	return data, nil
 }
 
-func (c *Client) GetTxn(payload *routes.GetTxnRequest) (*routes.GetTxnResponse, error) {
-	data := new(routes.GetTxnResponse)
+func (c *Client) GetTxn(payload *desoRoutes.GetTxnRequest) (*desoRoutes.GetTxnResponse, error) {
+	data := new(desoRoutes.GetTxnResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-txn", payload, data)
 	if err != nil {
@@ -104,8 +104,8 @@ func (c *Client) GetTxn(payload *routes.GetTxnRequest) (*routes.GetTxnResponse, 
 	return data, nil
 }
 
-func (c *Client) SendDeSo(payload *routes.SendDeSoRequest) (*routes.SendDeSoResponse, error) {
-	data := new(routes.SendDeSoResponse)
+func (c *Client) SendDeSo(payload *desoRoutes.SendDeSoRequest) (*desoRoutes.SendDeSoResponse, error) {
+	data := new(desoRoutes.SendDeSoResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/send-deso", payload, data)
 	if err != nil {
@@ -115,8 +115,8 @@ func (c *Client) SendDeSo(payload *routes.SendDeSoRequest) (*routes.SendDeSoResp
 	return data, nil
 }
 
-func (c *Client) SendDiamonds(payload *routes.SendDiamondsRequest) (*routes.SendDiamondsResponse, error) {
-	data := new(routes.SendDiamondsResponse)
+func (c *Client) SendDiamonds(payload *desoRoutes.SendDiamondsRequest) (*desoRoutes.SendDiamondsResponse, error) {
+	data := new(desoRoutes.SendDiamondsResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/send-diamonds", payload, data)
 	if err != nil {
@@ -126,8 +126,8 @@ func (c *Client) SendDiamonds(payload *routes.SendDiamondsRequest) (*routes.Send
 	return data, nil
 }
 
-func (c *Client) SubmitPost(payload *routes.SubmitPostRequest) (*routes.SubmitPostResponse, error) {
-	data := new(routes.SubmitPostResponse)
+func (c *Client) SubmitPost(payload *desoRoutes.SubmitPostRequest) (*desoRoutes.SubmitPostResponse, error) {
+	data := new(desoRoutes.SubmitPostResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/submit-post", payload, data)
 	if err != nil {
@@ -137,8 +137,8 @@ func (c *Client) SubmitPost(payload *routes.SubmitPostRequest) (*routes.SubmitPo
 	return data, nil
 }
 
-func (c *Client) SubmitTransaction(payload *routes.SubmitTransactionRequest) (*routes.SubmitTransactionResponse, error) {
-	data := new(routes.SubmitTransactionResponse)
+func (c *Client) SubmitTransaction(payload *desoRoutes.SubmitTransactionRequest) (*desoRoutes.SubmitTransactionResponse, error) {
+	data := new(desoRoutes.SubmitTransactionResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/submit-transaction", payload, data)
 	if err != nil {
@@ -148,8 +148,8 @@ func (c *Client) SubmitTransaction(payload *routes.SubmitTransactionRequest) (*r
 	return data, nil
 }
 
-func (c *Client) TransferCreatorCoin(payload *routes.TransferCreatorCoinRequest) (*routes.TransferCreatorCoinResponse, error) {
-	data := new(routes.TransferCreatorCoinResponse)
+func (c *Client) TransferCreatorCoin(payload *desoRoutes.TransferCreatorCoinRequest) (*desoRoutes.TransferCreatorCoinResponse, error) {
+	data := new(desoRoutes.TransferCreatorCoinResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/transfer-creator-coin", payload, data)
 	if err != nil {
@@ -159,8 +159,8 @@ func (c *Client) TransferCreatorCoin(payload *routes.TransferCreatorCoinRequest)
 	return data, nil
 }
 
-func (c *Client) TransferDAOCoin(payload *routes.TransferDAOCoinRequest) (*routes.TransferDAOCoinResponse, error) {
-	data := new(routes.TransferDAOCoinResponse)
+func (c *Client) TransferDAOCoin(payload *desoRoutes.TransferDAOCoinRequest) (*desoRoutes.TransferDAOCoinResponse, error) {
+	data := new(desoRoutes.TransferDAOCoinResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/transfer-dao-coin", payload, data)
 	if err != nil {
@@ -170,8 +170,8 @@ func (c *Client) TransferDAOCoin(payload *routes.TransferDAOCoinRequest) (*route
 	return data, nil
 }
 
-func (c *Client) UpdateProfile(payload *routes.UpdateProfileRequest) (*routes.UpdateProfileResponse, error) {
-	data := new(routes.UpdateProfileResponse)
+func (c *Client) UpdateProfile(payload *desoRoutes.UpdateProfileRequest) (*desoRoutes.UpdateProfileResponse, error) {
+	data := new(desoRoutes.UpdateProfileResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/update-profile", payload, data)
 	if err != nil {

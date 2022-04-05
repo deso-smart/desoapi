@@ -1,12 +1,12 @@
 package desoapi
 
 import (
-	"github.com/deso-smart/deso-backend/v2/routes"
+	desoRoutes "github.com/deso-smart/deso-backend/v2/routes"
 	"github.com/valyala/fasthttp"
 )
 
-func (c *Client) GetAppState(payload *routes.GetAppStateRequest) (*routes.GetAppStateResponse, error) {
-	data := new(routes.GetAppStateResponse)
+func (c *Client) GetAppState(payload *desoRoutes.GetAppStateRequest) (*desoRoutes.GetAppStateResponse, error) {
+	data := new(desoRoutes.GetAppStateResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-app-state", payload, data)
 	if err != nil {
@@ -16,8 +16,8 @@ func (c *Client) GetAppState(payload *routes.GetAppStateRequest) (*routes.GetApp
 	return data, nil
 }
 
-func (c *Client) GetExchangeRate() (*routes.GetExchangeRateResponse, error) {
-	data := new(routes.GetExchangeRateResponse)
+func (c *Client) GetExchangeRate() (*desoRoutes.GetExchangeRateResponse, error) {
+	data := new(desoRoutes.GetExchangeRateResponse)
 
 	err := c.executeRequest(fasthttp.MethodGet, "/api/v0/get-exchange-rate", nil, data)
 	if err != nil {

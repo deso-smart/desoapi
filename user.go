@@ -2,12 +2,12 @@ package desoapi
 
 import (
 	"fmt"
-	"github.com/deso-smart/deso-backend/v2/routes"
+	desoRoutes "github.com/deso-smart/deso-backend/v2/routes"
 	"github.com/valyala/fasthttp"
 )
 
-func (c *Client) BlockPublicKey(payload *routes.BlockPublicKeyRequest) (*routes.BlockPublicKeyResponse, error) {
-	data := new(routes.BlockPublicKeyResponse)
+func (c *Client) BlockPublicKey(payload *desoRoutes.BlockPublicKeyRequest) (*desoRoutes.BlockPublicKeyResponse, error) {
+	data := new(desoRoutes.BlockPublicKeyResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/block-public-key", payload, data)
 	if err != nil {
@@ -17,7 +17,7 @@ func (c *Client) BlockPublicKey(payload *routes.BlockPublicKeyRequest) (*routes.
 	return data, nil
 }
 
-func (c *Client) DeletePII(payload *routes.DeletePIIRequest) error {
+func (c *Client) DeletePII(payload *desoRoutes.DeletePIIRequest) error {
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/delete-pii", payload, nil)
 	if err != nil {
 		return err
@@ -26,8 +26,8 @@ func (c *Client) DeletePII(payload *routes.DeletePIIRequest) error {
 	return nil
 }
 
-func (c *Client) GetDiamondsForPublicKey(payload *routes.GetDiamondsForPublicKeyRequest) (*routes.GetDiamondsForPublicKeyResponse, error) {
-	data := new(routes.GetDiamondsForPublicKeyResponse)
+func (c *Client) GetDiamondsForPublicKey(payload *desoRoutes.GetDiamondsForPublicKeyRequest) (*desoRoutes.GetDiamondsForPublicKeyResponse, error) {
+	data := new(desoRoutes.GetDiamondsForPublicKeyResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-diamonds-for-public-key", payload, data)
 	if err != nil {
@@ -37,8 +37,8 @@ func (c *Client) GetDiamondsForPublicKey(payload *routes.GetDiamondsForPublicKey
 	return data, nil
 }
 
-func (c *Client) GetFollowsStateless(payload *routes.GetFollowsStatelessRequest) (*routes.GetFollowsResponse, error) {
-	data := new(routes.GetFollowsResponse)
+func (c *Client) GetFollowsStateless(payload *desoRoutes.GetFollowsStatelessRequest) (*desoRoutes.GetFollowsResponse, error) {
+	data := new(desoRoutes.GetFollowsResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-follows-stateless", payload, data)
 	if err != nil {
@@ -48,8 +48,8 @@ func (c *Client) GetFollowsStateless(payload *routes.GetFollowsStatelessRequest)
 	return data, nil
 }
 
-func (c *Client) GetHodlersForPublicKey(payload *routes.GetHodlersForPublicKeyRequest) (*routes.GetHodlersForPublicKeyResponse, error) {
-	data := new(routes.GetHodlersForPublicKeyResponse)
+func (c *Client) GetHodlersForPublicKey(payload *desoRoutes.GetHodlersForPublicKeyRequest) (*desoRoutes.GetHodlersForPublicKeyResponse, error) {
+	data := new(desoRoutes.GetHodlersForPublicKeyResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-hodlers-for-public-key", payload, data)
 	if err != nil {
@@ -59,8 +59,8 @@ func (c *Client) GetHodlersForPublicKey(payload *routes.GetHodlersForPublicKeyRe
 	return data, nil
 }
 
-func (c *Client) GetNotifications(payload *routes.GetNotificationsRequest) (*routes.GetNotificationsResponse, error) {
-	data := new(routes.GetNotificationsResponse)
+func (c *Client) GetNotifications(payload *desoRoutes.GetNotificationsRequest) (*desoRoutes.GetNotificationsResponse, error) {
+	data := new(desoRoutes.GetNotificationsResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-notifications", payload, data)
 	if err != nil {
@@ -70,8 +70,8 @@ func (c *Client) GetNotifications(payload *routes.GetNotificationsRequest) (*rou
 	return data, nil
 }
 
-func (c *Client) GetProfiles(payload *routes.GetProfilesRequest) (*routes.GetProfilesResponse, error) {
-	data := new(routes.GetProfilesResponse)
+func (c *Client) GetProfiles(payload *desoRoutes.GetProfilesRequest) (*desoRoutes.GetProfilesResponse, error) {
+	data := new(desoRoutes.GetProfilesResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-profiles", payload, data)
 	if err != nil {
@@ -81,8 +81,8 @@ func (c *Client) GetProfiles(payload *routes.GetProfilesRequest) (*routes.GetPro
 	return data, nil
 }
 
-func (c *Client) GetSingleProfile(payload *routes.GetSingleProfileRequest) (*routes.GetSingleProfileResponse, error) {
-	data := new(routes.GetSingleProfileResponse)
+func (c *Client) GetSingleProfile(payload *desoRoutes.GetSingleProfileRequest) (*desoRoutes.GetSingleProfileResponse, error) {
+	data := new(desoRoutes.GetSingleProfileResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-single-profile", payload, data)
 	if err != nil {
@@ -92,8 +92,8 @@ func (c *Client) GetSingleProfile(payload *routes.GetSingleProfileRequest) (*rou
 	return data, nil
 }
 
-func (c *Client) GetUnreadNotificationsCount(payload *routes.GetNotificationsCountRequest) (*routes.GetNotificationsCountResponse, error) {
-	data := new(routes.GetNotificationsCountResponse)
+func (c *Client) GetUnreadNotificationsCount(payload *desoRoutes.GetNotificationsCountRequest) (*desoRoutes.GetNotificationsCountResponse, error) {
+	data := new(desoRoutes.GetNotificationsCountResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-unread-notifications-count", payload, data)
 	if err != nil {
@@ -103,8 +103,8 @@ func (c *Client) GetUnreadNotificationsCount(payload *routes.GetNotificationsCou
 	return data, nil
 }
 
-func (c *Client) GetUserDerivedKeys(payload *routes.GetUserDerivedKeysRequest) (*routes.GetUserDerivedKeysResponse, error) {
-	data := new(routes.GetUserDerivedKeysResponse)
+func (c *Client) GetUserDerivedKeys(payload *desoRoutes.GetUserDerivedKeysRequest) (*desoRoutes.GetUserDerivedKeysResponse, error) {
+	data := new(desoRoutes.GetUserDerivedKeysResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-user-derived-keys", payload, data)
 	if err != nil {
@@ -114,8 +114,8 @@ func (c *Client) GetUserDerivedKeys(payload *routes.GetUserDerivedKeysRequest) (
 	return data, nil
 }
 
-func (c *Client) GetUserGlobalMetadata(payload *routes.GetUserGlobalMetadataRequest) (*routes.GetUserGlobalMetadataResponse, error) {
-	data := new(routes.GetUserGlobalMetadataResponse)
+func (c *Client) GetUserGlobalMetadata(payload *desoRoutes.GetUserGlobalMetadataRequest) (*desoRoutes.GetUserGlobalMetadataResponse, error) {
+	data := new(desoRoutes.GetUserGlobalMetadataResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-user-global-metadata", payload, data)
 	if err != nil {
@@ -125,9 +125,9 @@ func (c *Client) GetUserGlobalMetadata(payload *routes.GetUserGlobalMetadataRequ
 	return data, nil
 }
 
-func (c *Client) GetUserMetadata(publicKeyBase58Check string) (*routes.GetUserMetadataResponse, error) {
+func (c *Client) GetUserMetadata(publicKeyBase58Check string) (*desoRoutes.GetUserMetadataResponse, error) {
 	uri := fmt.Sprintf("/api/v0/get-user-metadata/%s", publicKeyBase58Check)
-	data := new(routes.GetUserMetadataResponse)
+	data := new(desoRoutes.GetUserMetadataResponse)
 
 	err := c.executeRequest(fasthttp.MethodGet, uri, nil, data)
 	if err != nil {
@@ -137,8 +137,8 @@ func (c *Client) GetUserMetadata(publicKeyBase58Check string) (*routes.GetUserMe
 	return data, nil
 }
 
-func (c *Client) GetUsersStateless(payload *routes.GetUsersStatelessRequest) (*routes.GetUsersResponse, error) {
-	data := new(routes.GetUsersResponse)
+func (c *Client) GetUsersStateless(payload *desoRoutes.GetUsersStatelessRequest) (*desoRoutes.GetUsersResponse, error) {
+	data := new(desoRoutes.GetUsersResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-users-stateless", payload, data)
 	if err != nil {
@@ -148,8 +148,8 @@ func (c *Client) GetUsersStateless(payload *routes.GetUsersStatelessRequest) (*r
 	return data, nil
 }
 
-func (c *Client) IsFollowingPublicKey(payload *routes.IsFollowingPublicKeyRequest) (*routes.IsFolllowingPublicKeyResponse, error) {
-	data := new(routes.IsFolllowingPublicKeyResponse)
+func (c *Client) IsFollowingPublicKey(payload *desoRoutes.IsFollowingPublicKeyRequest) (*desoRoutes.IsFolllowingPublicKeyResponse, error) {
+	data := new(desoRoutes.IsFolllowingPublicKeyResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/is-following-public-key", payload, data)
 	if err != nil {
@@ -159,8 +159,8 @@ func (c *Client) IsFollowingPublicKey(payload *routes.IsFollowingPublicKeyReques
 	return data, nil
 }
 
-func (c *Client) IsHodlingPublicKey(payload *routes.IsHodlingPublicKeyRequest) (*routes.IsHodlingPublicKeyResponse, error) {
-	data := new(routes.IsHodlingPublicKeyResponse)
+func (c *Client) IsHodlingPublicKey(payload *desoRoutes.IsHodlingPublicKeyRequest) (*desoRoutes.IsHodlingPublicKeyResponse, error) {
+	data := new(desoRoutes.IsHodlingPublicKeyResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/is-hodling-public-key", payload, data)
 	if err != nil {
@@ -170,7 +170,7 @@ func (c *Client) IsHodlingPublicKey(payload *routes.IsHodlingPublicKeyRequest) (
 	return data, nil
 }
 
-func (c *Client) SetNotificationMetadata(payload *routes.SetNotificationMetadataRequest) error {
+func (c *Client) SetNotificationMetadata(payload *desoRoutes.SetNotificationMetadataRequest) error {
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/set-notification-metadata", payload, nil)
 	if err != nil {
 		return err
@@ -179,8 +179,8 @@ func (c *Client) SetNotificationMetadata(payload *routes.SetNotificationMetadata
 	return nil
 }
 
-func (c *Client) UpdateUserGlobalMetadata(payload *routes.UpdateUserGlobalMetadataRequest) (*routes.UpdateUserGlobalMetadataResponse, error) {
-	data := new(routes.UpdateUserGlobalMetadataResponse)
+func (c *Client) UpdateUserGlobalMetadata(payload *desoRoutes.UpdateUserGlobalMetadataRequest) (*desoRoutes.UpdateUserGlobalMetadataResponse, error) {
+	data := new(desoRoutes.UpdateUserGlobalMetadataResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/update-user-global-metadata", payload, data)
 	if err != nil {

@@ -1,12 +1,12 @@
 package desoapi
 
 import (
-	"github.com/deso-smart/deso-backend/v2/routes"
+	desoRoutes "github.com/deso-smart/deso-backend/v2/routes"
 	"github.com/valyala/fasthttp"
 )
 
-func (c *Client) GetTutorialCreators(payload *routes.GetTutorialCreatorsRequest) (*routes.GetTutorialCreatorResponse, error) {
-	data := new(routes.GetTutorialCreatorResponse)
+func (c *Client) GetTutorialCreators(payload *desoRoutes.GetTutorialCreatorsRequest) (*desoRoutes.GetTutorialCreatorResponse, error) {
+	data := new(desoRoutes.GetTutorialCreatorResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-tutorial-creators", payload, data)
 	if err != nil {
@@ -16,7 +16,7 @@ func (c *Client) GetTutorialCreators(payload *routes.GetTutorialCreatorsRequest)
 	return data, nil
 }
 
-func (c *Client) StartOrSkipTutorial(payload *routes.StartOrSkipTutorialRequest) error {
+func (c *Client) StartOrSkipTutorial(payload *desoRoutes.StartOrSkipTutorialRequest) error {
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/start-or-skip-tutorial", payload, nil)
 	if err != nil {
 		return err
@@ -25,7 +25,7 @@ func (c *Client) StartOrSkipTutorial(payload *routes.StartOrSkipTutorialRequest)
 	return nil
 }
 
-func (c *Client) UpdateTutorialStatus(payload *routes.UpdateTutorialStatusRequest) error {
+func (c *Client) UpdateTutorialStatus(payload *desoRoutes.UpdateTutorialStatusRequest) error {
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/update-tutorial-status", payload, nil)
 	if err != nil {
 		return err

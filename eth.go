@@ -1,12 +1,12 @@
 package desoapi
 
 import (
-	"github.com/deso-smart/deso-backend/v2/routes"
+	desoRoutes "github.com/deso-smart/deso-backend/v2/routes"
 	"github.com/valyala/fasthttp"
 )
 
-func (c *Client) QueryETHRPC(payload *routes.QueryETHRPCRequest) (*routes.InfuraResponse, error) {
-	data := new(routes.InfuraResponse)
+func (c *Client) QueryETHRPC(payload *desoRoutes.QueryETHRPCRequest) (*desoRoutes.InfuraResponse, error) {
+	data := new(desoRoutes.InfuraResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/query-eth-rpc", payload, data)
 	if err != nil {
@@ -16,8 +16,8 @@ func (c *Client) QueryETHRPC(payload *routes.QueryETHRPCRequest) (*routes.Infura
 	return data, nil
 }
 
-func (c *Client) SubmitETHTx(payload *routes.SubmitETHTxRequest) (*routes.SubmitETHTxResponse, error) {
-	data := new(routes.SubmitETHTxResponse)
+func (c *Client) SubmitETHTx(payload *desoRoutes.SubmitETHTxRequest) (*desoRoutes.SubmitETHTxResponse, error) {
+	data := new(desoRoutes.SubmitETHTxResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/submit-eth-tx", payload, data)
 	if err != nil {
