@@ -1,7 +1,11 @@
 package desoapi
 
 import (
+	"encoding/hex"
 	"errors"
+	"fmt"
+	"github.com/btcsuite/btcd/btcec"
+	desoCore "github.com/deso-smart/deso-core/v2/lib"
 	jsoniter "github.com/json-iterator/go"
 	"github.com/valyala/fasthttp"
 	"net/url"
@@ -10,7 +14,6 @@ import (
 const (
 	version   = "0.0.0"
 	userAgent = "desoapi/" + version
-	BaseUri   = "https://node.desosmart.com"
 )
 
 type Client struct {
@@ -40,7 +43,7 @@ type errorResponse struct {
 	Error string
 }
 
-func (c *Client) Request(method string, uri string, body interface{}, data interface{}) error {
+func (c *Client) executeRequest(method string, uri string, body interface{}, data interface{}) error {
 	resolvedUri, err := c.baseUri.Parse(uri)
 	if err != nil {
 		return err
@@ -69,7 +72,7 @@ func (c *Client) Request(method string, uri string, body interface{}, data inter
 		return err
 	}
 
-	// or status >= 200 && status <= 204
+	// TODO: or status >= 200 && status <= 204?
 	if resp.StatusCode() < fasthttp.StatusOK || resp.StatusCode() >= fasthttp.StatusBadRequest {
 		errResp := new(errorResponse)
 		if err := c.json.Unmarshal(resp.Body(), errResp); err != nil {
@@ -90,4 +93,29 @@ func (c *Client) Request(method string, uri string, body interface{}, data inter
 	}
 
 	return nil
+}
+
+func SignTransactionWithDerivedKey(transactionHex string, derivedKeySeedHex string) (string, error) {
+	txnBytes, err := hex.DecodeString(transactionHex)
+	if err != nil {
+		return "", fmt.Errorf("problem decoding transaction hex: %w", err)
+	}
+
+	derivedKeyBytes, err := hex.DecodeString(derivedKeySeedHex)
+	if err != nil {
+		return "", fmt.Errorf("problem decoding derived key seed hex: %w", err)
+	}
+
+	privateKeyBytes, _ := btcec.PrivKeyFromBytes(btcec.S256(), derivedKeyBytes)
+	newTxnBytes, txnSignatureBytes, err := desoCore.SignTransactionWithDerivedKey(txnBytes, privateKeyBytes)
+	if err != nil {
+		return "", fmt.Errorf("problem signing transaction: %w", err)
+	}
+
+	var signedTxnHex []byte
+	signedTxnHex = newTxnBytes[0 : len(newTxnBytes)-1]
+	signedTxnHex = append(signedTxnHex, desoCore.UintToBuf(uint64(len(txnSignatureBytes)))...)
+	signedTxnHex = append(signedTxnHex, txnSignatureBytes...)
+
+	return hex.EncodeToString(signedTxnHex), nil
 }
