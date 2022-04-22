@@ -180,3 +180,25 @@ func (c *Client) UpdateProfile(payload *desoRoutes.UpdateProfileRequest) (*desoR
 
 	return data, nil
 }
+
+func (c *Client) CreateDAOCoinLimitOrder(payload *desoRoutes.DAOCoinLimitOrderWithExchangeRateAndQuantityRequest) (*desoRoutes.DAOCoinLimitOrderResponse, error) {
+	data := new(desoRoutes.DAOCoinLimitOrderResponse)
+
+	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/create-dao-coin-limit-order", payload, data)
+	if err != nil {
+		return nil, err
+	}
+
+	return data, nil
+}
+
+func (c *Client) CancelDAOCoinLimitOrder(payload *desoRoutes.DAOCoinLimitOrderWithCancelOrderIDRequest) (*desoRoutes.DAOCoinLimitOrderResponse, error) {
+	data := new(desoRoutes.DAOCoinLimitOrderResponse)
+
+	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/cancel-dao-coin-limit-order", payload, data)
+	if err != nil {
+		return nil, err
+	}
+
+	return data, nil
+}

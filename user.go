@@ -189,3 +189,26 @@ func (c *Client) UpdateUserGlobalMetadata(payload *desoRoutes.UpdateUserGlobalMe
 
 	return data, nil
 }
+
+func (c *Client) GetTransactionSpendingLimitHexString(payload *desoRoutes.GetTransactionSpendingLimitHexStringRequest) (*desoRoutes.GetTransactionSpendingLimitHexStringResponse, error) {
+	data := new(desoRoutes.GetTransactionSpendingLimitHexStringResponse)
+
+	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-transaction-spending-limit-hex-string", payload, data)
+	if err != nil {
+		return nil, err
+	}
+
+	return data, nil
+}
+
+func (c *Client) GetTransactionSpendingLimitResponseFromHex(transactionSpendingLimitHex string) (*desoRoutes.TransactionSpendingLimitResponse, error) {
+	uri := fmt.Sprintf("/api/v0/get-transaction-spending-limit-response-from-hex/%s", transactionSpendingLimitHex)
+	data := new(desoRoutes.TransactionSpendingLimitResponse)
+
+	err := c.executeRequest(fasthttp.MethodGet, uri, nil, data)
+	if err != nil {
+		return nil, err
+	}
+
+	return data, nil
+}
