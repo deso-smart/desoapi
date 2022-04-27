@@ -4,8 +4,8 @@ go 1.17
 
 require (
 	github.com/btcsuite/btcd v0.21.0-beta
-	github.com/deso-smart/deso-backend/v2 v2.1.1
-	github.com/deso-smart/deso-core/v2 v2.1.1
+	github.com/deso-smart/deso-backend/v2 v2.1.2
+	github.com/deso-smart/deso-core/v2 v2.1.2
 	github.com/json-iterator/go v1.1.6
 	github.com/valyala/fasthttp v1.34.0
 )

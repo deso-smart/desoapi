@@ -202,3 +202,14 @@ func (c *Client) CancelDAOCoinLimitOrder(payload *desoRoutes.DAOCoinLimitOrderWi
 
 	return data, nil
 }
+
+func (c *Client) CreateDAOCoinMarketOrder(payload *desoRoutes.DAOCoinMarketOrderWithQuantityRequest) (*desoRoutes.DAOCoinLimitOrderResponse, error) {
+	data := new(desoRoutes.DAOCoinLimitOrderResponse)
+
+	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/create-dao-coin-market-order", payload, data)
+	if err != nil {
+		return nil, err
+	}
+
+	return data, nil
+}
