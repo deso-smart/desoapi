@@ -30,8 +30,10 @@ func NewClient(baseUri string) (*Client, error) {
 	}
 
 	c := &Client{
-		baseUri:   parsedBaseUri,
-		http:      &fasthttp.Client{},
+		baseUri: parsedBaseUri,
+		http: &fasthttp.Client{
+			MaxConnsPerHost: 65536,
+		},
 		json:      jsoniter.ConfigCompatibleWithStandardLibrary,
 		userAgent: userAgent,
 	}
