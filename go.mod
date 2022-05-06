@@ -4,8 +4,8 @@ go 1.17
 
 require (
 	github.com/btcsuite/btcd v0.21.0-beta
-	github.com/deso-smart/deso-backend/v2 v2.1.2
-	github.com/deso-smart/deso-core/v2 v2.1.2
+	github.com/deso-smart/deso-backend/v2 v2.1.3
+	github.com/deso-smart/deso-core/v2 v2.1.3
 	github.com/json-iterator/go v1.1.6
 	github.com/valyala/fasthttp v1.34.0
 )
@@ -19,18 +19,20 @@ require (
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/btcsuite/btclog v0.0.0-20170628155309-84c8d2346e9f // indirect
 	github.com/btcsuite/btcutil v1.0.2 // indirect
+	github.com/bwesterb/go-ristretto v1.2.0 // indirect
 	github.com/cespare/xxhash v1.1.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.1 // indirect
+	github.com/cloudflare/circl v1.1.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/decred/dcrd/lru v1.0.0 // indirect
+	github.com/decred/dcrd/lru v1.1.0 // indirect
 	github.com/deso-protocol/go-deadlock v1.0.0 // indirect
 	github.com/deso-protocol/go-merkle-tree v1.0.0 // indirect
 	github.com/dgraph-io/badger/v3 v3.2103.0 // indirect
 	github.com/dgraph-io/ristretto v0.1.0 // indirect
 	github.com/dustin/go-humanize v1.0.0 // indirect
 	github.com/ethereum/go-ethereum v1.9.25 // indirect
-	github.com/fatih/color v1.7.0 // indirect
+	github.com/fatih/color v1.13.0 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/gernest/mention v2.0.0+incompatible // indirect
@@ -62,8 +64,8 @@ require (
 	github.com/kevinburke/twilio-go v0.0.0-20210327194925-1623146bcf73 // indirect
 	github.com/klauspost/compress v1.15.0 // indirect
 	github.com/magiconair/properties v1.8.1 // indirect
-	github.com/mattn/go-colorable v0.1.4 // indirect
-	github.com/mattn/go-isatty v0.0.8 // indirect
+	github.com/mattn/go-colorable v0.1.9 // indirect
+	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/mattn/goveralls v0.0.6 // indirect
 	github.com/mgutz/ansi v0.0.0-20170206155736-9520e82c474b // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
@@ -72,6 +74,7 @@ require (
 	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/montanaflynn/stats v0.0.0-20171201202039-1bf9dbcd8cbe // indirect
 	github.com/nyaruka/phonenumbers v1.0.69 // indirect
+	github.com/oleiade/lane v1.0.1 // indirect
 	github.com/pelletier/go-toml v1.7.0 // indirect
 	github.com/petermattis/goid v0.0.0-20180202154549-b0b1615b78e5 // indirect
 	github.com/philhofer/fwd v1.1.1 // indirect
