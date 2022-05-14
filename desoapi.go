@@ -109,7 +109,7 @@ func SignTransactionWithDerivedKey(transactionHex string, derivedKeySeedHex stri
 	}
 
 	privateKeyBytes, _ := btcec.PrivKeyFromBytes(btcec.S256(), derivedKeyBytes)
-	newTxnBytes, txnSignatureBytes, err := desoCore.SignTransactionWithDerivedKey(txnBytes, privateKeyBytes)
+	newTxnBytes, txnSignatureBytes, err := desoCore.SignTransactionBytes(txnBytes, privateKeyBytes, true)
 	if err != nil {
 		return "", fmt.Errorf("problem signing transaction: %w", err)
 	}
