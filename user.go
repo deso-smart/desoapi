@@ -212,3 +212,14 @@ func (c *Client) GetTransactionSpendingLimitResponseFromHex(transactionSpendingL
 
 	return data, nil
 }
+
+func (c *Client) GetHodlersCountForPublicKeys(payload *desoRoutes.GetHolderCountForPublicKeysRequest) (map[string]int, error) {
+	var data map[string]int
+
+	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-hodlers-count-for-public-keys", payload, &data)
+	if err != nil {
+		return nil, err
+	}
+
+	return data, nil
+}
