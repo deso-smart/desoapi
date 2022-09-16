@@ -1,7 +1,7 @@
 package desoapi
 
 import (
-	desoRoutes "github.com/deso-smart/deso-backend/v2/routes"
+	desoRoutes "github.com/deso-smart/deso-backend/v3/routes"
 	"github.com/valyala/fasthttp"
 )
 
@@ -71,6 +71,17 @@ func (c *Client) SendMessageStateless(payload *desoRoutes.SendMessageStatelessRe
 	data := new(desoRoutes.SendMessageStatelessResponse)
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/send-message-stateless", payload, data)
+	if err != nil {
+		return nil, err
+	}
+
+	return data, nil
+}
+
+func (c *Client) GetBulkMessagingPublicKeys(payload *desoRoutes.GetBulkMessagingPublicKeysRequest) (*desoRoutes.GetBulkMessagingPublicKeysResponse, error) {
+	data := new(desoRoutes.GetBulkMessagingPublicKeysResponse)
+
+	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-bulk-messaging-public-keys", payload, data)
 	if err != nil {
 		return nil, err
 	}

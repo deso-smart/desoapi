@@ -2,7 +2,7 @@ package desoapi
 
 import (
 	"fmt"
-	desoRoutes "github.com/deso-smart/deso-backend/v2/routes"
+	desoRoutes "github.com/deso-smart/deso-backend/v3/routes"
 	"github.com/valyala/fasthttp"
 )
 
@@ -217,6 +217,29 @@ func (c *Client) GetHodlersCountForPublicKeys(payload *desoRoutes.GetHolderCount
 	var data map[string]int
 
 	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-hodlers-count-for-public-keys", payload, &data)
+	if err != nil {
+		return nil, err
+	}
+
+	return data, nil
+}
+
+func (c *Client) GetSingleDerivedKey(ownerPublicKeyBase58Check string, derivedPublicKeyBase58Check string) (*desoRoutes.GetSingleDerivedKeyResponse, error) {
+	uri := fmt.Sprintf("/api/v0/get-single-derived-key/%s/%s", ownerPublicKeyBase58Check, derivedPublicKeyBase58Check)
+	data := new(desoRoutes.GetSingleDerivedKeyResponse)
+
+	err := c.executeRequest(fasthttp.MethodGet, uri, nil, data)
+	if err != nil {
+		return nil, err
+	}
+
+	return data, nil
+}
+
+func (c *Client) GetAccessBytes(payload *desoRoutes.GetAccessBytesRequest) (*desoRoutes.GetAccessBytesResponse, error) {
+	data := new(desoRoutes.GetAccessBytesResponse)
+
+	err := c.executeRequest(fasthttp.MethodPost, "/api/v0/get-access-bytes", payload, data)
 	if err != nil {
 		return nil, err
 	}

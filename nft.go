@@ -2,7 +2,7 @@ package desoapi
 
 import (
 	"fmt"
-	desoRoutes "github.com/deso-smart/deso-backend/v2/routes"
+	desoRoutes "github.com/deso-smart/deso-backend/v3/routes"
 	"github.com/valyala/fasthttp"
 )
 

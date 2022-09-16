@@ -1,11 +1,11 @@
 module github.com/deso-smart/desoapi
 
-go 1.17
+go 1.18
 
 require (
 	github.com/btcsuite/btcd v0.21.0-beta
-	github.com/deso-smart/deso-backend/v2 v2.2.6
-	github.com/deso-smart/deso-core/v2 v2.2.6
+	github.com/deso-smart/deso-backend/v3 v3.0.1
+	github.com/deso-smart/deso-core/v3 v3.0.1
 	github.com/json-iterator/go v1.1.6
 	github.com/valyala/fasthttp v1.34.0
 )
@@ -25,7 +25,8 @@ require (
 	github.com/cloudflare/circl v1.1.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/decred/dcrd/lru v1.1.0 // indirect
+	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.0.1 // indirect
+	github.com/decred/dcrd/lru v1.1.1 // indirect
 	github.com/deso-protocol/go-deadlock v1.0.0 // indirect
 	github.com/deso-protocol/go-merkle-tree v1.0.0 // indirect
 	github.com/dgraph-io/badger/v3 v3.2103.0 // indirect

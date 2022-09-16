@@ -14,7 +14,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	desoRoutes "github.com/deso-smart/deso-backend/v2/routes"
+	desoRoutes "github.com/deso-smart/deso-backend/v3/routes"
 	"github.com/deso-smart/desoapi"
 	"log"
 )

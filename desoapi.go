@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/btcsuite/btcd/btcec"
-	desoCore "github.com/deso-smart/deso-core/v2/lib"
+	desoCore "github.com/deso-smart/deso-core/v3/lib"
 	jsoniter "github.com/json-iterator/go"
 	"github.com/valyala/fasthttp"
 	"net/url"
